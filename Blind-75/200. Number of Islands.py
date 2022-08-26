@@ -15,6 +15,7 @@ class Solution:
             q.append((r,c))
 
             while q:
+                # Use q.pop() to do a DFS instead of a BFS
                 row, col = q.popleft()
 
                 for dr, dc in neighbors:
