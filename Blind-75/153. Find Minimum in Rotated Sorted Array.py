@@ -28,5 +28,26 @@ class Solution:
 
         return minVal
 
+    def findMin(self, nums: List[int]) -> int:
+        l, r = 0, len(nums) - 1
+        res = nums[0]
+
+        while r >= l:
+            if nums[l] < nums[r]:
+                res = min(res, nums[l])
+                break
+            mid = (l + r) // 2
+            res = min(res, nums[mid])
+            
+            # left side is sorted 
+            # 2,3,6,1,2 so look in the right
+            if nums[l] <= nums[mid]:
+                l = mid + 1
+            else:
+                r = mid - 1
+
+        return res
+
+
 # Runtime: 92 ms, faster than 5.13% of Python3 online submissions for Find Minimum in Rotated Sorted Array.
 # Memory Usage: 14.3 MB, less than 23.73% of Python3 online submissions for Find Minimum in Rotated Sorted Array.
