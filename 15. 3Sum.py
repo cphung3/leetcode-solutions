@@ -42,6 +42,8 @@ class Solution:
         nums.sort()
         ls = len(nums)
         for i, x in enumerate(nums):
+            # not first value and same value as before
+            # don't reuse the same value
             if i > 0 and x == nums[i-1]:
                 continue
             l, r = i + 1, ls - 1
@@ -69,3 +71,6 @@ print(ans)
 
 # Runtime: 1060 ms, faster than 53.52% of Python3 online submissions for 3Sum.
 # Memory Usage: 17.5 MB, less than 74.28% of Python3 online submissions for 3Sum.
+
+# Runtime: 1501 ms, faster than 42.76% of Python3 online submissions for 3Sum.
+# Memory Usage: 18.1 MB, less than 39.52% of Python3 online submissions for 3Sum.
