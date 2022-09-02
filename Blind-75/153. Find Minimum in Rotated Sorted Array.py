@@ -33,6 +33,8 @@ class Solution:
         res = nums[0]
 
         while r >= l:
+            # if the current subarray is sorted completely
+            # just return the left val
             if nums[l] < nums[r]:
                 res = min(res, nums[l])
                 break
