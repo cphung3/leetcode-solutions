@@ -9,3 +9,6 @@ class Solution:
             s2 = s1
             s1 = res
         return res
+
+# Runtime: 55 ms, faster than 27.96% of Python3 online submissions for Climbing Stairs.
+# Memory Usage: 14 MB, less than 11.85% of Python3 online submissions for Climbing Stairs.
