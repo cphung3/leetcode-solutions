@@ -20,6 +20,7 @@ def mergeSort(array):
                 i += 1
             else:
                 array[k] = L[j]
+                j += 1
             k += 1
 
         while i < len(L):
