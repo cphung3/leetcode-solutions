@@ -44,12 +44,18 @@ class Solution:
         res = []
 
         for i in range(len(intervals)):
+            # Ending of new interval is smaller than start of current one
+            # so just insert at beginning
             if newInterval[1] < intervals[i][0]:
                 res.append(newInterval)
                 return res + intervals[i:]
             elif newInterval[0] > intervals[i][1]:
+                # Start of new interval is bigger than end of current one
+                # so just append the current interval and wait
                 res.append(intervals[i])
             else:
+                # There is overlap so the new start will be the earlier start
+                # and the new end will be the later end
                 newInterval = [min(intervals[i][0], newInterval[0]), max(intervals[i][1], newInterval[1])]
         
         res.append(newInterval)

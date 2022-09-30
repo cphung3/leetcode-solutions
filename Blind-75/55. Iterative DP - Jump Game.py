@@ -2,6 +2,8 @@ class Solution:
     def canJump(self, nums: List[int]) -> bool:
         goal = len(nums)-1
         for i in range(goal-1, -1, -1):
+            # If this index can get to the end
+            # then make this index the new end
             if nums[i] >= goal - i:
                 goal = i
 

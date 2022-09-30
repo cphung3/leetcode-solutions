@@ -25,6 +25,9 @@ class Solution:
         # iterate backwards
         for i in range(len(nums) - 1, -1, -1):
             for j in range(i + 1, len(nums)):
+                # if this is a valid increasing subsequence check if it's part
+                # another subsequence and if it's not then you can add 1 to the
+                # jth value because it's building up another subsequence 
                 if nums[i] < nums[j]:
                     LIS[i] = max(LIS[i], 1 + LIS[j])
         return max(LIS)

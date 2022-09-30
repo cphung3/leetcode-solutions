@@ -36,8 +36,8 @@ class Solution:
 
             if nums[mid] == target:
                 return mid
-            
-            # left side
+            # Essentially you're continuously looking for where the split is
+            # left side is sorted 
             if nums[l] <= nums[mid]:
                 # look in right side
                 if target > nums[mid] or target < nums[l]:
