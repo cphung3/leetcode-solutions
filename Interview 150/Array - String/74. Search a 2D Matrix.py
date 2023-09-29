@@ -3,7 +3,7 @@ class Solution:
         return self.searchHelper(matrix, target)
 
     def searchHelper(self, matrix, target):
-        print(matrix)
+        # print(matrix)
         if len(matrix) < 1:
             return False
         elif len(matrix) == 1:
@@ -15,7 +15,6 @@ class Solution:
         if target > endVal:
             return self.searchHelper(matrix[mid+1:], target)
         elif target < endVal:
-            print(target, startVal)
             if target > startVal:
                 return self.searchRow(matrix[mid], target)
             elif target < startVal:
@@ -23,7 +22,7 @@ class Solution:
         return True
 
     def searchRow(self, row, target):
-        print(row)
+        # print(row)
         if len(row) < 1:
             return False
         mid = len(row)// 2
